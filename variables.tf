@@ -1,13 +1,12 @@
 data "aws_ami" "latest_free_ami" {
   most_recent = true
-  owners      = ["137112412989"]
+  owners      = ["099720109477"]
 
   filter {
     name   = "name"
-    values = ["al2023-ami-202*-kernel-6.1-x86_64"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
   }
 }
-
 variable "ec2_instance_type" {
   type    = string
   default = "t2.micro"
