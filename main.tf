@@ -23,6 +23,7 @@ resource "aws_instance" "server" {
   instance_type          = var.ec2_instance_type
   subnet_id              = aws_subnet.publicsubnet.id
   vpc_security_group_ids = [aws_security_group.my_security_group.id]
+  user_data = file("instructions.sh")
 }
 resource "aws_security_group" "my_security_group" {
   name        = "Dynamic-my-security-group"
