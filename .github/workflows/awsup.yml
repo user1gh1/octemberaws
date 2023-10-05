@@ -1,6 +1,10 @@
 name: ServerUp
 on:
   workflow_dispatch:
+    inputs:
+      dockerbuild:
+        required: true
+        default: 'DockerPush'
 jobs:
   firstjob:
     runs-on: ubuntu-latest
