@@ -24,8 +24,8 @@ jobs:
           
         - name: Apply Terraform
           run: terraform apply -auto-approve
-        # Add a 5-minutes delay before destroying resources
+        # Add a 4-minutes delay before destroying resources
         - name: Delay
-          run: sleep 300 
+          run: sleep 240 
         - name: Destroy Terraform Resources
           run: terraform destroy -auto-approve
