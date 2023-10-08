@@ -1,8 +1,7 @@
 name: DockerPush
 
 on:
-  workflow_dispatch:
-  repository_dispatch:
+  workflow_dispatch:  
 
 jobs:
   docker:
@@ -26,3 +25,8 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/helloworld
+          
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: my-event

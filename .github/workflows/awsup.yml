@@ -1,10 +1,8 @@
 name: ServerUp
 on:
   workflow_dispatch:
-    inputs:
-      dockerbuild:
-        required: true
-        default: 'DockerPush'
+  repository_dispatch:
+    types: [my-event]
 jobs:
   firstjob:
     runs-on: ubuntu-latest
